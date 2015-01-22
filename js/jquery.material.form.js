@@ -1,4 +1,11 @@
 $(function(){
+	$.fn.hasAttr = function(attribute){
+		var attr = this.attr(attribute);
+		if (typeof attr !== typeof undefined && attr !== false) 
+		   return true;
+		return false;
+	}
+
 	$.fn.materialForm = function() {
 		// Inputs
 	    this.find('input, textarea').each(function(){
@@ -62,7 +69,9 @@ $(function(){
 	    	$(this).children('option').each(function(j){
 	    		var title = $(this).text();
 	    		var value = $(this).val();
-	    		var selected = $(this).prop('selected');
+	    		
+	    		var selected = $(this).hasAttr('selected');
+	    		console.log(selected);
 
 	    		var $list_item = $('<li></li>');
 	    		$list.append($list_item);
@@ -82,7 +91,8 @@ $(function(){
 	    		$bar.width(percentage + '%');
 	    	}
 	    	else{
-	    		$label.children('span').text($selected.next('label').text())
+	    		if(selected_length)
+	    			$label.children('span').text($selected.next('label').text())
 	    	}
 	    	$(this).remove();
 	    });
