@@ -8,7 +8,7 @@ Include script after the jQuery library (unless you are packaging scripts someho
 ```
 Include css style:
 ``` html
-<link rel="stylesheet" type="text/css" href="css/jquery.material.form.min.css">
+<link rel="stylesheet" type="text/css" href="path/to/jquery.material.form.min.css">
 ```
 ##Usage
 ####HTML
