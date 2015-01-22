@@ -6,7 +6,10 @@ Include script after the jQuery library (unless you are packaging scripts someho
 ``` javascript
 <script src="/path/to/jquery.material.form.min.js"></script>
 ```
-
+Include css style:
+```
+<link rel="stylesheet" type="text/css" href="css/jquery.material.form.min.css">
+```
 ##Usage
 ####HTML
 ``` html
