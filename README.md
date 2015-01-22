@@ -7,7 +7,7 @@ Include script after the jQuery library (unless you are packaging scripts someho
 <script src="/path/to/jquery.material.form.min.js"></script>
 ```
 Include css style:
-```
+``` html
 <link rel="stylesheet" type="text/css" href="css/jquery.material.form.min.css">
 ```
 ##Usage
@@ -22,5 +22,13 @@ Include css style:
 
 ####JS
 ``` javascript
-$('form.material').materialForm(
+$('form.material').materialForm();
+```
+
+####Validation
+This plugin works with jQuery validation http://jqueryvalidation.org/
+``` javascript
+$('form.material).validate({ 
+	errorPlacement: function(error, element) {}
+}); // Apply validator with no error messages but classes only
 ```
