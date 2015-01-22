@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Material INPUT</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/jquery.material.form.min.css">
+</head>
+<body>
+
+<form action="" class="material">
+	<input type="email" placeholder="E-mail" required>
+	<input type="text" placeholder="Name">
+	<textarea placeholder="Message"></textarea>
+</form>
+
+<script type="text/javascript" src="js/jquery-2.0.3.min.js"></script> <!-- JQUERY -->
+<script type="text/javascript" src="js/jquery.validate.min.js"></script> <!-- JQUERY VALIDATOR (additional) -->
+<script type="text/javascript" src="js/jquery.material.form.min.js"></script> <!-- JQUERY MATERIAL FORM PLUGIN -->
+
+<script type="text/javascript">
+	$(function(){
+		$('form.material').materialForm(); // Apply material
+		$('form').validate({ 
+			errorPlacement: function(error, element) {}
+		}); // Apply validator with no error messages but classes only
+	});
+</script>
+
+</body>
+</html>
