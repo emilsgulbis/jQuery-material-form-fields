@@ -28,7 +28,7 @@ $('form.material').materialForm();
 ####Validation
 This plugin works with jQuery validation http://jqueryvalidation.org/
 ``` javascript
-$('form.material).validate({ 
+$('form.material').validate({ 
 	errorPlacement: function(error, element) {}
 }); // Apply validator with no error messages but classes only
 ```
