@@ -1,17 +1,18 @@
-.material .input{
+/* Material input */
+.material .material-input{
     position: relative;
     padding-top: 18px;
     margin-bottom: 10px;
     background:#fff;
 }
 
-.material .input:after{
+.material .material-input:after{
     display: block;
     clear: both;
     content:"";
 }
-.material .input input, 
-.material .input textarea{
+.material .material-input input, 
+.material .material-input textarea{
     font-size: 16px;
     width: 100%;
     border:0;
@@ -21,20 +22,20 @@
     float:left;
 }
 
-.material .input textarea{
+.material .material-input textarea{
     height: 120px;
     padding:7px 0;
 }
 
-.material .input input{
+.material .material-input input{
     height: 32px;
 }
 
-.material .input label{
+.material .material-input label{
     line-height: 32px;
 }
 
-.material .input label{
+.material .material-input label{
     color:gray;
     font-size: 16px;
     font-weight: 300;
@@ -42,52 +43,44 @@
     position: absolute;
     left:0;
     top:18px;
-
-    transition:0.2s ease all; 
-    -moz-transition:0.2s ease all; 
-    -webkit-transition:0.2s ease all;
 }
 
-.material .bar{
+.material .material-bar{
     position: absolute;
     bottom:0;left:0;
     display: block;
     width: 100%;
 }
 
-.material .bar:before, 
-.material .bar:after{
+.material .material-bar:before, 
+.material .material-bar:after{
     content:"";
     height: 2px;
     width: 0;
     bottom:0;
     position: absolute;
     background: #0000ff;
-
-    transition:0.2s ease all; 
-    -moz-transition:0.2s ease all; 
-    -webkit-transition:0.2s ease all;
 }
 
-.bar:before{
+.material .material-bar:before{
     left:50%;
 }
 
-.bar:after{
+.material .material-bar:after{
     right:50%;
 }
 
-.material .input :focus ~ .bar:before,
-.material .input :focus ~ .bar:after,
-.material .error ~ .bar:before,
-.material .error ~ .bar:after{
+.material .material-input :focus ~ .material-bar:before,
+.material .material-input :focus ~ .material-bar:after,
+.material .error ~ .material-bar:before,
+.material .error ~ .material-bar:after{
   width:50%;
 }
 
-.material .error ~ .bar:before,
-.material .error ~ .bar:after,
-.material .error ~ .bar:before,
-.material .error ~ .bar:after{
+.material .error ~ .material-bar:before,
+.material .error ~ .material-bar:after,
+.material .error ~ .material-bar:before,
+.material .error ~ .material-bar:after{
     background:#ff0000;
 }
 
@@ -97,8 +90,8 @@
     color:red;
 }
 
-.material .input :focus ~ label,
-.material .input .filled ~ label,
+.material .material-input :focus ~ label,
+.material .material-input .filled ~ label,
 .material .error:focus ~ label{
     color:lightgray;
     font-size: 13px;
@@ -106,6 +99,109 @@
     line-height: 24px;
 }
 
+/* Select */
+.material .material-select {
+    font-size: 16px;
+    font-weight: 300;
+    width: 100%;
+    position: relative;
+    margin-bottom: 10px;
+    padding-top: 18px;
+}
+.material .material-select input{display: none}
+.material .material-select > label{
+    color:gray;
+    border-bottom: 1px solid lightgray;
+
+    height: 40px;
+    line-height: 40px;
+    padding:0 30px 0 0px;
+    width: 100%;
+    cursor: pointer;
+    position: relative;
+    display: block;
+}
+
+.material .material-select > label strong{
+    border-color: lightgray transparent transparent transparent;
+    border-style: solid;
+    border-width: 6px 5px 0 5px;
+    
+    margin-top: -3px;
+    width: 0;
+    height: 0;
+    position: absolute;
+    right:0;top:50%;
+}
+
+.material .material-select > input:checked ~ ul{
+    visibility: visible;
+    opacity: 1;
+    top:18px;
+}
+.material .material-select ul{
+    background:#fff;
+    top:0;
+    left:0;width: 100%;
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 2
+}
+.material .material-select ul li label{
+    color:gray
+}
+.material .material-select ul li input:checked + label, 
+.material .material-select ul li:hover input:checked + label{
+
+    font-weight: 400
+}
+.material .material-select ul li label{
+    display: block;
+    cursor: pointer;
+    padding:7px 10px;
+}
+.material .material-select ul li label:hover{
+    background:#f5f5f5
+}
+
+.material .material-select > input:checked + .material-bar{
+    top:16px;
+}
+
+.material .material-select .material-bar{
+    height: 2px;
+    background: #0000ff;
+    width: 0;
+    bottom:auto;
+    top:56px;
+}
+
+/* Shadow */
+.material .material-select ul{
+    box-shadow: 0 2px 2px rgba(0,0,0,.2);
+}
+
+/* Animation */
+.material .material-select ul,
+.material .material-bar:before, 
+.material .material-bar:after,
+.material .material-input label,
+.material .material-select .material-bar{
+    transition:.2s ease all; 
+    -moz-transition:.2s ease all; 
+    -webkit-transition:.2s ease all;
+}
+
+/* Disable select */
+.material{
+    -webkit-user-select: none;  
+    -moz-user-select: none;    
+    -ms-user-select: none;      
+    user-select: none;
+}
+
+/* Material border box reset */
 .material *,
 .material *:before,
 .material *:after {
@@ -113,3 +209,17 @@
 	-moz-box-sizing:    border-box; 
 	box-sizing:         border-box;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

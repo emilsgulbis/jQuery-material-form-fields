@@ -3,7 +3,7 @@
 <head>
 	<title>Material INPUT</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link rel="stylesheet" type="text/css" href="css/jquery.material.form.min.css">
+	<link rel="stylesheet" type="text/css" href="css/jquery.material.form.css">
 </head>
 <body>
 
@@ -11,11 +11,24 @@
 	<input type="email" placeholder="E-mail" required>
 	<input type="text" placeholder="Name">
 	<textarea placeholder="Message"></textarea>
+
+	<select name="mySelect" placeholder="Select one of these">
+		<option value="1">Option</option>
+		<option value="2">Super option</option>
+		<option value="3" selected>Awesome option</option>
+		<option value="4">WORST option ever</option>
+	</select>
+
+	<select name="mySelects" placeholder="You can select multiple" multiple>
+		<option value="1">Option</option>
+		<option value="2" selected>Super option</option>
+		<option value="3" selected>Awesome option</option>
+	</select>
 </form>
 
 <script type="text/javascript" src="js/jquery-2.0.3.min.js"></script> <!-- JQUERY -->
 <script type="text/javascript" src="js/jquery.validate.min.js"></script> <!-- JQUERY VALIDATOR (additional) -->
-<script type="text/javascript" src="js/jquery.material.form.min.js"></script> <!-- JQUERY MATERIAL FORM PLUGIN -->
+<script type="text/javascript" src="js/jquery.material.form.js"></script> <!-- JQUERY MATERIAL FORM PLUGIN -->
 
 <script type="text/javascript">
 	$(function(){
