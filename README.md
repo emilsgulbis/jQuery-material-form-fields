@@ -14,9 +14,22 @@ Include css style:
 ####HTML
 ``` html
 <form action="" class="material">
-	<input type="email" placeholder="E-mail" required>
-	<input type="text" placeholder="Name">
-	<textarea placeholder="Message"></textarea>
+	<input type="email" name="email" placeholder="E-mail" required>
+	<input type="text" name="name" placeholder="Name">
+	<textarea name="message" placeholder="Message"></textarea>
+
+	<select name="your-select-name" placeholder="Select one of these">
+		<option value="1">Option</option>
+		<option value="2">Super option</option>
+		<option value="3" selected>Awesome option</option>
+		<option value="4">WORST option ever</option>
+	</select>
+
+	<select name="your-select-name" placeholder="You can select multiple" multiple>
+		<option value="1">Option</option>
+		<option value="2" selected>Super option</option>
+		<option value="3" selected>Awesome option</option>
+	</select>
 </form>
 ```
 
