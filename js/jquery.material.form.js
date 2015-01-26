@@ -10,6 +10,8 @@ $(function(){
 		// Inputs
 	    this.find('input, textarea').each(function(){
 	    	if(isValidType($(this))){
+	    		var name = $(this).attr('name');
+	    		$(this).attr('id', name);
 		    	var $wrap = $(this).wrap("<div class='material-input'></div>").parent();
 		    	$wrap.append("<span class='material-bar'></span>");
 
@@ -18,7 +20,7 @@ $(function(){
 		    	
 		    	var placeholder = $(this).attr('placeholder');
 		    	if(placeholder){
-		    		$wrap.append("<label>"+placeholder+"</label>");
+		    		$wrap.append("<label for='"+name+"'>"+placeholder+"</label>");
 		    		$(this).removeAttr('placeholder');
 		    	}
 
@@ -33,7 +35,7 @@ $(function(){
 
 	    function isValidType($el){
 	    	var type = $el.attr('type');
-	    	return (type != 'hidden' && type != 'submit' && type != 'checkbox' && type != 'radio' ? 1 : 0);
+	    	return (type != 'hidden' && type != 'submit' && type != 'checkbox' && type != 'radio' && type != 'file' ? 1 : 0);
 	    }
 
 	    function addFilled($el){
@@ -54,9 +56,14 @@ $(function(){
 	    		var $bar = $('<span class="material-bar"></span>');
 	    		$wrap.append($bar).addClass('checkbox');
 	    	}
+	    	else{
+	    		var $title = $('<span class="title">'+placeholder+'</span>');
+	    		$wrap.prepend($title);
+	    	}
 
 	    	var $label = $('<label for="select-'+i+'"><span>'+placeholder+'</span><strong></strong></label>');
 	    	var $checkbox = $('<input type="checkbox" id="select-'+i+'">');
+
 	    	$wrap.prepend($checkbox);
 	    	$wrap.prepend($label);
 	    	
@@ -71,7 +78,6 @@ $(function(){
 	    		var value = $(this).val();
 	    		
 	    		var selected = $(this).hasAttr('selected');
-	    		console.log(selected);
 
 	    		var $list_item = $('<li></li>');
 	    		$list.append($list_item);
@@ -91,8 +97,10 @@ $(function(){
 	    		$bar.width(percentage + '%');
 	    	}
 	    	else{
-	    		if(selected_length)
+	    		if(selected_length){
 	    			$label.children('span').text($selected.next('label').text())
+	    			$wrap.addClass('filled');
+	    		}
 	    	}
 	    	$(this).remove();
 	    });
@@ -122,10 +130,12 @@ $(function(){
 				$(this).closest('.material-select').find('.material-bar').width(percentage + '%');
 			}
 			else{
-				var $label = $(this).closest('.material-select').children('label').children('span');
+				var $material_select = $(this).closest('.material-select')
+				var $label = $material_select.children('label').children('span');
 				var $next = $(this).next('label');
 				$label.text($next.text());
-				$(this).closest('.material-select').children('input').prop('checked', false);
+				$material_select.children('input').prop('checked', false);
+				$material_select.addClass('filled');
 			}
 		});
 

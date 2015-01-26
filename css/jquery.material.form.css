@@ -122,6 +122,25 @@
     display: block;
 }
 
+.material .material-select > .title{
+    position: absolute;
+    color:gray;
+    height: 40px;
+    line-height: 40px;
+    top:18px;left:0;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.material .material-select > input:checked + .title,
+.material .material-select.filled > .title{
+    top:0;
+    opacity: 1;
+    visibility: visible;
+    font-size: 13px;
+    line-height: 24px;
+}
+
 .material .material-select > label strong{
     border-color: lightgray transparent transparent transparent;
     border-style: solid;
@@ -137,7 +156,7 @@
 .material .material-select > input:checked ~ ul{
     visibility: visible;
     opacity: 1;
-    top:18px;
+    top:24px;
 }
 .material .material-select ul{
     background:#fff;
@@ -166,7 +185,7 @@
 }
 
 .material .material-select > input:checked + .material-bar{
-    top:16px;
+    top:22px;
 }
 
 .material .material-select .material-bar{
@@ -187,7 +206,8 @@
 .material .material-bar:before, 
 .material .material-bar:after,
 .material .material-input label,
-.material .material-select .material-bar{
+.material .material-select .material-bar,
+.material .material-select > span{
     transition:.2s ease all; 
     -moz-transition:.2s ease all; 
     -webkit-transition:.2s ease all;
