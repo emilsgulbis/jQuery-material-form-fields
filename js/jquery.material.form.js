@@ -57,7 +57,7 @@ $(function(){
 	    		$wrap.append($bar).addClass('checkbox');
 	    	}
 	    	else{
-	    		var $title = $('<span class="title">'+placeholder+'</span>');
+	    		var $title = $('<span class="material-title">'+placeholder+'</span>');
 	    		$wrap.prepend($title);
 	    	}
 

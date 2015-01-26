@@ -122,9 +122,9 @@
     display: block;
 }
 
-.material .material-select > .title{
+.material .material-select > .material-title{
     position: absolute;
-    color:gray;
+    color:lightgray;
     height: 40px;
     line-height: 40px;
     top:18px;left:0;
@@ -132,8 +132,8 @@
     visibility: hidden;
 }
 
-.material .material-select > input:checked + .title,
-.material .material-select.filled > .title{
+.material .material-select > input:checked + .material-title,
+.material .material-select.filled > .material-title{
     top:0;
     opacity: 1;
     visibility: visible;
@@ -225,21 +225,7 @@
 .material *,
 .material *:before,
 .material *:after {
-	-webkit-box-sizing: border-box; 
-	-moz-box-sizing:    border-box; 
-	box-sizing:         border-box;
+    -webkit-box-sizing: border-box; 
+    -moz-box-sizing:    border-box; 
+    box-sizing:         border-box;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
