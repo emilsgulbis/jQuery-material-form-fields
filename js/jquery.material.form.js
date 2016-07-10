@@ -10,8 +10,12 @@ $(function(){
 		// Inputs
 	    this.find('input, textarea').each(function(i){
 	    	if(isValidType($(this))){
-	    		var name = $(this).attr('name');
-	    		$(this).attr('id', name);
+    			if($(this).attr('id') == '') {
+				name = $(this).attr('name');
+				$(this).attr('id', name);
+			}else{
+				name = $(this).attr('id');
+			}
 		    	var $wrap = $(this).wrap("<div class='material-input'></div>").parent();
 		    	$wrap.append("<span class='material-bar'></span>");
 
